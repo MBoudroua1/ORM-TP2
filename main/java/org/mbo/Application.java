@@ -1,7 +1,7 @@
 package org.mbo;
 
 import org.mbo.Entities.Produit;
-import org.mbo.dao.EntityRepository;
+import org.mbo.dao.ProduitRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +13,7 @@ public class Application {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
-        EntityRepository<Produit> produitDao = ctx.getBean(EntityRepository.class);
+        ProduitRepository produitDao = ctx.getBean(EntityRepository.class);
         produitDao.save(new Produit("Hp",599.99,63));
         produitDao.save(new Produit("lenovo",1299.99,45));
         produitDao.save(new Produit("xiaomi",19999.99,83));
